@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Digital Hub Sains Tahun 1 - Dunia Tumbuhan</title>
+<style>
+:root{
+  --green:#2e7d32; --light:#e8f5e9; --yellow:#fff8d6; --blue:#e3f2fd;
+  --pink:#fce4ec; --purple:#ede7f6; --orange:#fff3e0; --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#e8f5e9,#fffde7);
+  color:#234; min-height:100vh;
+}
+header{
+  background:linear-gradient(135deg,#43a047,#81c784);color:white;text-align:center;
+  padding:28px 16px;border-bottom-left-radius:30px;border-bottom-right-radius:30px;
+}
+header .emoji{font-size:64px}
+h1{margin:6px 0;font-size:clamp(28px,6vw,46px)}
+.subtitle{font-size:20px;font-weight:bold}
+.container{max-width:1050px;margin:auto;padding:18px}
+.card{
+  background:white;border-radius:24px;padding:22px;margin:16px 0;
+  box-shadow:0 7px 22px rgba(0,0,0,.08);
+}
+nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0 22px}
+nav button,.btn{
+  border:0;border-radius:18px;padding:13px 18px;font-size:17px;font-weight:bold;
+  cursor:pointer;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.1)
+}
+nav button:hover,.btn:hover{transform:translateY(-2px)}
+.section{display:none}.section.active{display:block}
+.big-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.info{
+  border-radius:20px;padding:18px;text-align:center;font-size:20px;font-weight:bold;
+}
+.info .pic{font-size:58px;display:block;margin-bottom:8px}
+.green{background:var(--light)}.yellow{background:var(--yellow)}.blue{background:var(--blue)}
+.pink{background:var(--pink)}.purple{background:var(--purple)}.orange{background:var(--orange)}
+.flash{
+  background:#f1f8e9;border:3px solid #a5d6a7;border-radius:24px;padding:28px;text-align:center;
+  min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+}
+.flash .big{font-size:80px}.flash h2{font-size:30px;margin:8px}
+.gamebox{text-align:center;background:#fafafa;border-radius:22px;padding:20px}
+.option{
+  width:100%;max-width:560px;margin:9px auto;padding:16px;border:3px solid #c8e6c9;
+  border-radius:18px;background:white;font-size:20px;font-weight:bold;cursor:pointer;
+}
+.option:hover{background:#f1f8e9}
+.feedback{font-size:22px;font-weight:bold;min-height:34px;margin:10px}
+.progress{height:16px;background:#ddd;border-radius:10px;overflow:hidden;margin:12px 0}
+.progress div{height:100%;background:#43a047;width:0%}
+.score{font-size:28px;font-weight:bold;text-align:center}
+.small{font-size:16px}
+.certificate{
+  border:10px double #2e7d32;border-radius:20px;padding:30px;text-align:center;
+  background:linear-gradient(135deg,#fffef0,#e8f5e9);margin-top:15px;
+}
+.certificate h2{font-size:38px;color:#2e7d32;margin:8px}
+.nameinput{padding:14px;border:2px solid #81c784;border-radius:14px;font-size:18px;width:100%;max-width:500px}
+footer{text-align:center;padding:25px;color:#456}
+@media print{
+ body{background:white}.no-print{display:none!important}.certificate{margin:0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="emoji">🌱🌻🌳</div>
+  <h1>DUNIA TUMBUHAN</h1>
+  <div class="subtitle">Mini Digital Hub Sains Tahun 1</div>
+</header>
+
+<div class="container">
+<nav class="no-print">
+  <button onclick="show('home')">🏠 Mula</button>
+  <button onclick="show('nota')">🌿 Nota</button>
+  <button onclick="show('flash')">🃏 Kad</button>
+  <button onclick="show('games')">🎮 Game</button>
+  <button onclick="show('quiz')">📝 Kuiz</button>
+  <button onclick="show('sijil')">🏆 Sijil</button>
+</nav>
+
+<section id="home" class="section active">
+ <div class="card" style="text-align:center">
+   <h2>🌱 Jom Kenal Tumbuhan!</h2>
+   <p style="font-size:23px">Klik gambar dan bermain. 😄</p>
+   <div class="big-grid">
+    <div class="info green"><span class="pic">🌱</span>Akar</div>
+    <div class="info yellow"><span class="pic">🌳</span>Batang</div>
+    <div class="info blue"><span class="pic">🍃</span>Daun</div>
+    <div class="info pink"><span class="pic">🌸</span>Bunga</div>
+    <div class="info orange"><span class="pic">🍎</span>Buah</div>
+   </div>
+ </div>
+ <div class="card">
+  <h2>🎯 Saya boleh...</h2>
+  <div class="big-grid">
+   <div class="info green">👀 Kenal bahagian tumbuhan</div>
+   <div class="info blue">🌿 Bezakan akar dan daun</div>
+   <div class="info yellow">🌳 Kenal batang</div>
+   <div class="info pink">☀️ Kenal keperluan tumbuhan</div>
+  </div>
+ </div>
+</section>
+
+<section id="nota" class="section">
+
+<div class="card" style="background:linear-gradient(135deg,#f1f8e9,#fffde7);">
+  <h2 style="text-align:center;font-size:30px;color:#2e7d32;">🌱 INFOGRAFIK: DUNIA TUMBUHAN 🌱</h2>
+  <div style="display:flex;justify-content:center;">
+    <svg viewBox="0 0 900 620" width="100%" style="max-width:900px;border-radius:24px;background:#ffffff;box-shadow:0 5px 18px rgba(0,0,0,.08)" role="img" aria-label="Infografik bahagian tumbuhan dan keperluan asas tumbuhan">
+      <rect x="0" y="0" width="900" height="620" rx="28" fill="#f7fff4"/>
+      <text x="450" y="55" text-anchor="middle" font-size="32" font-weight="700" fill="#2e7d32">KENALI TUMBUHAN</text>
+
+      <!-- plant -->
+      <line x1="450" y1="260" x2="450" y2="470" stroke="#6d4c41" stroke-width="18" stroke-linecap="round"/>
+      <ellipse cx="390" cy="275" rx="95" ry="42" transform="rotate(-25 390 275)" fill="#66bb6a"/>
+      <ellipse cx="510" cy="315" rx="95" ry="42" transform="rotate(25 510 315)" fill="#81c784"/>
+      <circle cx="450" cy="215" r="48" fill="#f8b9c7"/>
+      <circle cx="425" cy="190" r="25" fill="#f48fb1"/>
+      <circle cx="475" cy="190" r="25" fill="#f48fb1"/>
+      <circle cx="450" cy="220" r="20" fill="#ffd54f"/>
+      <ellipse cx="450" cy="480" rx="190" ry="35" fill="#a5d66a"/>
+      <path d="M450 470 C410 510 390 535 370 570 M450 470 C490 510 510 535 530 570 M450 480 C450 525 450 550 450 585" fill="none" stroke="#8d6e63" stroke-width="10" stroke-linecap="round"/>
+
+      <!-- labels -->
+      <rect x="55" y="135" width="190" height="65" rx="18" fill="#e3f2fd"/>
+      <text x="150" y="176" text-anchor="middle" font-size="25" font-weight="700" fill="#1565c0">🍃 DAUN</text>
+      <line x1="245" y1="168" x2="375" y2="270" stroke="#1565c0" stroke-width="4"/>
+
+      <rect x="655" y="130" width="190" height="65" rx="18" fill="#fce4ec"/>
+      <text x="750" y="171" text-anchor="middle" font-size="25" font-weight="700" fill="#ad1457">🌸 BUNGA</text>
+      <line x1="655" y1="168" x2="495" y2="215" stroke="#ad1457" stroke-width="4"/>
+
+      <rect x="655" y="285" width="190" height="65" rx="18" fill="#fff3e0"/>
+      <text x="750" y="326" text-anchor="middle" font-size="25" font-weight="700" fill="#e65100">🌳 BATANG</text>
+      <line x1="655" y1="318" x2="470" y2="350" stroke="#e65100" stroke-width="4"/>
+
+      <rect x="55" y="350" width="190" height="65" rx="18" fill="#e8f5e9"/>
+      <text x="150" y="391" text-anchor="middle" font-size="25" font-weight="700" fill="#2e7d32">🌱 AKAR</text>
+      <line x1="245" y1="382" x2="370" y2="505" stroke="#2e7d32" stroke-width="4"/>
+
+      <rect x="315" y="535" width="270" height="60" rx="18" fill="#fff8d6"/>
+      <text x="450" y="573" text-anchor="middle" font-size="23" font-weight="700" fill="#7b5e00">☀️ 💧 🌬️ AIR • CAHAYA • UDARA</text>
+    </svg>
+  </div>
+  <p style="text-align:center;font-size:19px;font-weight:bold;margin-bottom:0;">👀 Lihat gambar dahulu. Kemudian klik nota di bawah.</p>
+</div>
+ <div class="card">
+  <h2>🌿 Nota Mudah</h2>
+  <div class="big-grid">
+   <div class="info green"><span class="pic">🌱</span>AKAR<br><span class="small">Pegang tumbuhan pada tanah.</span></div>
+   <div class="info yellow"><span class="pic">🌳</span>BATANG<br><span class="small">Menyokong tumbuhan.</span></div>
+   <div class="info blue"><span class="pic">🍃</span>DAUN<br><span class="small">Tempat tumbuhan membuat makanan.</span></div>
+   <div class="info pink"><span class="pic">🌸</span>BUNGA<br><span class="small">Bahagian pembiakan tumbuhan.</span></div>
+   <div class="info orange"><span class="pic">🍎</span>BUAH<br><span class="small">Mengandungi biji.</span></div>
+  </div>
+ </div>
+ <div class="card">
+  <h2>🌱 Jenis Akar</h2>
+  <div class="big-grid">
+   <div class="info green"><span class="pic">🥕</span><b>Akar Tunjang</b><br><span class="small">Satu akar utama.</span></div>
+   <div class="info blue"><span class="pic">🌾</span><b>Akar Serabut</b><br><span class="small">Banyak akar halus.</span></div>
+  </div>
+ </div>
+ <div class="card">
+  <h2>🌳 Jenis Batang</h2>
+  <div class="big-grid">
+   <div class="info yellow"><span class="pic">🌳</span><b>Berkayu</b><br><span class="small">Keras.</span></div>
+   <div class="info pink"><span class="pic">🥬</span><b>Tidak berkayu</b><br><span class="small">Lembut.</span></div>
+  </div>
+ </div>
+ <div class="card">
+  <h2>🍃 Urat Daun</h2>
+  <div class="big-grid">
+   <div class="info green"><span class="pic">🍃</span><b>Urat Jejala</b><br><span class="small">Bercabang seperti jala.</span></div>
+   <div class="info blue"><span class="pic">🌾</span><b>Urat Selari</b><br><span class="small">Garis hampir selari.</span></div>
+  </div>
+ </div>
+ <div class="card">
+  <h2>☀️ Tumbuhan perlukan...</h2>
+  <div class="big-grid">
+   <div class="info yellow"><span class="pic">💧</span>Air</div>
+   <div class="info orange"><span class="pic">☀️</span>Cahaya</div>
+   <div class="info blue"><span class="pic">🌬️</span>Udara</div>
+  </div>
+ </div>
+</section>
+
+<section id="flash" class="section">
+ <div class="card">
+  <h2>🃏 Kad Tumbuhan</h2>
+  <div class="flash">
+   <div id="flashPic" class="big">🌱</div>
+   <h2 id="flashTitle">Akar</h2>
+   <p id="flashText" style="font-size:21px">Bahagian tumbuhan yang berada di dalam tanah.</p>
+   <button class="btn" onclick="nextFlash()">➡️ Kad Seterusnya</button>
+  </div>
+ </div>
+</section>
+
+<section id="games" class="section">
+ <div class="card">
+  <h2>🎮 Game 1: Cari Jawapan</h2>
+  <div class="gamebox">
+   <div style="font-size:70px" id="gamePic">🌱</div>
+   <h2 id="gameQ">Apakah bahagian ini?</h2>
+   <div id="gameOptions"></div>
+   <div class="feedback" id="gameFeedback"></div>
+   <button class="btn" onclick="nextGame()">➡️ Seterusnya</button>
+  </div>
+ </div>
+ <div class="card">
+  <h2>🎮 Game 2: Betul atau Salah</h2>
+  <div class="gamebox">
+   <div style="font-size:60px">🌱</div>
+   <h2 id="tfQ">Tumbuhan perlukan air.</h2>
+   <button class="btn" onclick="answerTF(true)">✅ Betul</button>
+   <button class="btn" onclick="answerTF(false)">❌ Salah</button>
+   <div class="feedback" id="tfFeedback"></div>
+ </div>
+ </div>
+</section>
+
+<section id="quiz" class="section">
+ <div class="card">
+  <h2>📝 Kuiz 13 Soalan</h2>
+  <p style="font-size:20px">Pilih satu jawapan. 😊</p>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="score">⭐ Skor: <span id="quizScore">0</span> / 13</div>
+  <div class="gamebox" style="margin-top:15px">
+    <div id="quizPic" style="font-size:70px">🌱</div>
+    <h2 id="quizQuestion"></h2>
+    <div id="quizOptions"></div>
+    <div class="feedback" id="quizFeedback"></div>
+    <button class="btn" id="nextQuizBtn" onclick="nextQuiz()" style="display:none">➡️ Soalan Seterusnya</button>
+  </div>
+ </div>
+</section>
+
+<section id="sijil" class="section">
+ <div class="card no-print">
+   <h2>🏆 Sijil Pencapaian</h2>
+   <input id="studentName" class="nameinput" placeholder="Tulis nama murid">
+   <p><button class="btn" onclick="makeCertificate()">✨ Jana Sijil</button></p>
+ </div>
+ <div id="certificate" class="certificate">
+   <div style="font-size:65px">🌱🏆🌻</div>
+   <h2>SIJIL PENCAPAIAN</h2>
+   <p style="font-size:22px">Diberikan kepada</p>
+   <h1 id="certName">________________________</h1>
+   <p style="font-size:22px">kerana telah menyelesaikan</p>
+   <h2>MINI DIGITAL HUB SAINS TAHUN 1<br>– DUNIA TUMBUHAN –</h2>
+   <p style="font-size:24px">⭐ Skor Kuiz: <b id="certScore">0 / 13</b></p>
+   <p style="font-size:20px">🌿 Teruskan belajar dan sayangi tumbuhan! 🌿</p>
+   <p style="margin-top:35px"><b>CIKGU MAHFUDZAH</b><br>Guru Sains</p>
+ </div>
+ <div class="no-print" style="text-align:center;margin-top:15px">
+   <button class="btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+ </div>
+</section>
+
+<footer>🌱 Mini Digital Hub Sains Tahun 1 • Dunia Tumbuhan</footer>
+</div>
+
+<script>
+const flashcards=[
+ ["🌱","Akar","Bahagian tumbuhan yang berada di dalam tanah."],
+ ["🌳","Batang","Menyokong tumbuhan."],
+ ["🍃","Daun","Membantu tumbuhan membuat makanan."],
+ ["🌸","Bunga","Bahagian pembiakan tumbuhan."],
+ ["🍎","Buah","Mengandungi biji."],
+ ["🥕","Akar tunjang","Mempunyai satu akar utama."],
+ ["🌾","Akar serabut","Mempunyai banyak akar halus."],
+ ["🌳","Batang berkayu","Batang keras."],
+ ["🥬","Batang tidak berkayu","Batang lembut."],
+ ["🍃","Urat jejala","Urat bercabang seperti jala."],
+ ["🌾","Urat selari","Urat hampir selari."],
+ ["☀️","Keperluan tumbuhan","Air, cahaya dan udara."]
+];
+let fi=0;
+function nextFlash(){
+ fi=(fi+1)%flashcards.length;
+ document.getElementById("flashPic").textContent=flashcards[fi][0];
+ document.getElementById("flashTitle").textContent=flashcards[fi][1];
+ document.getElementById("flashText").textContent=flashcards[fi][2];
+}
+function show(id){
+ document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ if(id==="quiz" && !quizStarted) startQuiz();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+const games=[
+ {pic:"🌱",q:"Apakah bahagian ini?",opts:["Akar","Daun","Bunga"],ans:0},
+ {pic:"🍃",q:"Apakah bahagian ini?",opts:["Buah","Daun","Akar"],ans:1},
+ {pic:"🌸",q:"Apakah bahagian ini?",opts:["Bunga","Batang","Akar"],ans:0},
+ {pic:"🍎",q:"Apakah bahagian ini?",opts:["Daun","Buah","Batang"],ans:1},
+ {pic:"🌳",q:"Batang pokok mangga ialah...",opts:["Berkayu","Tidak berkayu","Air"],ans:0}
+];
+let gi=0;
+function renderGame(){
+ const g=games[gi];
+ document.getElementById("gamePic").textContent=g.pic;
+ document.getElementById("gameQ").textContent=g.q;
+ document.getElementById("gameFeedback").textContent="";
+ document.getElementById("gameOptions").innerHTML=g.opts.map((o,i)=>
+ `<button class="option" onclick="checkGame(${i})">${o}</button>`).join("");
+}
+function checkGame(i){
+ const f=document.getElementById("gameFeedback");
+ f.textContent=i===games[gi].ans?"🎉 Betul!":"😊 Cuba lagi!";
+}
+function nextGame(){gi=(gi+1)%games.length;renderGame();}
+renderGame();
+
+let tfIndex=0;
+const tf=[
+ ["Tumbuhan perlukan air.",true],
+ ["Tumbuhan tidak perlukan cahaya.",false],
+ ["Daun ialah bahagian tumbuhan.",true],
+ ["Akar tunjang mempunyai satu akar utama.",true]
+];
+function answerTF(v){
+ const f=document.getElementById("tfFeedback");
+ f.textContent=v===tf[tfIndex][1]?"🎉 Betul!":"😊 Cuba lagi!";
+ tfIndex=(tfIndex+1)%tf.length;
+ setTimeout(()=>{
+   document.getElementById("tfQ").textContent=tf[tfIndex][0];
+   f.textContent="";
+ },700);
+}
+
+const quiz=[
+ ["🌱","Apakah bahagian tumbuhan ini?",["Akar","Daun","Bunga"],0],
+ ["🍃","Apakah bahagian tumbuhan ini?",["Akar","Daun","Batang"],1],
+ ["🌳","Batang pokok mangga ialah...",["Berkayu","Tidak berkayu","Air"],0],
+ ["🌾","Akar padi ialah...",["Tunjang","Serabut","Kayu"],1],
+ ["🥭","Akar pokok mangga ialah...",["Tunjang","Serabut","Selari"],0],
+ ["🍃","Urat daun mangga ialah...",["Selari","Jejala","Serabut"],1],
+ ["🌾","Urat daun pisang ialah...",["Jejala","Tunjang","Selari"],2],
+ ["🌳","Batang berkayu ialah...",["Keras","Lembut","Cair"],0],
+ ["💧","Tumbuhan perlukan...",["Air","Mainan","Buku"],0],
+ ["☀️","Tumbuhan perlukan...",["Cahaya","Kasut","Pensel"],0],
+ ["🌬️","Tumbuhan perlukan...",["Udara","Telefon","Beg"],0],
+ ["🥬","Batang sawi ialah...",["Berkayu","Tidak berkayu","Batu"],1],
+ ["🍃","Urat yang bercabang seperti jala ialah...",["Urat jejala","Urat selari","Akar tunjang"],0]
+];
+let qi=0, score=0, answered=false, quizStarted=false;
+function startQuiz(){
+ quizStarted=true; qi=0;score=0;answered=false;
+ document.getElementById("quizScore").textContent=0;
+ renderQuiz();
+}
+function renderQuiz(){
+ const q=quiz[qi];
+ document.getElementById("quizPic").textContent=q[0];
+ document.getElementById("quizQuestion").textContent=(qi+1)+". "+q[1];
+ document.getElementById("quizOptions").innerHTML=q[2].map((o,i)=>
+ `<button class="option" onclick="answerQuiz(${i})">${o}</button>`).join("");
+ document.getElementById("quizFeedback").textContent="";
+ document.getElementById("nextQuizBtn").style.display="none";
+ document.getElementById("bar").style.width=(qi/quiz.length*100)+"%";
+ answered=false;
+}
+function answerQuiz(i){
+ if(answered)return;
+ answered=true;
+ const correct=quiz[qi][3]===i;
+ if(correct) score++;
+ document.getElementById("quizScore").textContent=score;
+ document.getElementById("quizFeedback").textContent=correct?"🎉 Betul!":"😊 Jawapan yang betul: "+quiz[qi][2][quiz[qi][3]];
+ document.getElementById("nextQuizBtn").style.display="inline-block";
+}
+function nextQuiz(){
+ if(qi<quiz.length-1){qi++;renderQuiz();}
+ else{
+   document.getElementById("bar").style.width="100%";
+   document.getElementById("quizQuestion").textContent="🎉 Tahniah! Kuiz sudah tamat!";
+   document.getElementById("quizPic").textContent="🏆";
+   document.getElementById("quizOptions").innerHTML="";
+   const pct=Math.round(score/13*100);
+   document.getElementById("quizFeedback").textContent="Skor kamu: "+score+"/13 ("+pct+"%)";
+   document.getElementById("nextQuizBtn").style.display="none";
+   document.getElementById("certScore").textContent=score+" / 13";
+ }
+}
+function makeCertificate(){
+ const name=document.getElementById("studentName").value.trim();
+ document.getElementById("certName").textContent=name||"Saintis Cilik";
+ document.getElementById("certScore").textContent=score+" / 13";
+}
+</script>
+</body>
+</html>
